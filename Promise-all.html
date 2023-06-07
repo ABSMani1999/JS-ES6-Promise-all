@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Promise all</title>
+        <meta charset ="utf-8">
+		<meta name="description" content=""/>
+		<meta name="keywords" content="HTML,CSS,Java script"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    </head>
+    <body>
+        <script>
+            iPhone = () => {
+                return new Promise((res,rej)=>{
+                    setTimeout(()=>{
+                        res("Hello Iphone user");
+                    },6000);
+                });
+            }
+            onePlus = (b) => {
+                return new Promise((res,rej)=>{
+                    setTimeout(()=>{
+                        res("Hello Oneplus user");
+                    },3000);
+                });
+            }
+            samsung = (c) => {
+                return new Promise((res,rej)=>{
+                    setTimeout(()=>{
+                        res("Hello Samsung user");
+                    },4000);
+                });
+            }
+            Promise.all([iPhone(),onePlus(),samsung()]).then((w)=>{
+                console.log(w);
+            }).catch(()=>{
+                console.log("Please Check the code");
+            });
+        </script>
+    </body>
+</html>
